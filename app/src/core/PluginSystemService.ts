@@ -1,15 +1,21 @@
 import { PluginManager } from './pluginSystem/PluginManager';
+import { ObsidianCompatiblePluginManager } from './pluginSystem/ObsidianCompatiblePluginManager';
 import { RssPluginManifest } from '../plugins/rss/manifest';
+import { obsidianExampleManifest } from '../plugins/obsidianExample/manifest';
+import { helloPluginManifest } from '../plugins/hello/manifest';
 // import { AiAssistantPluginManifest } from '../plugins/aiAssistant/manifest';
 
 export class PluginSystemService {
   private pluginManager: PluginManager;
+  private obsidianPluginManager: ObsidianCompatiblePluginManager;
   private moleculeContext: any;
 
   constructor(moleculeContext: any) {
     this.moleculeContext = moleculeContext;
     this.pluginManager = new PluginManager(moleculeContext);
+    this.obsidianPluginManager = new ObsidianCompatiblePluginManager(moleculeContext);
     this.setupPluginManager();
+    this.setupObsidianPluginManager();
   }
 
   private setupPluginManager() {
@@ -51,6 +57,45 @@ export class PluginSystemService {
     });
   }
 
+  private setupObsidianPluginManager() {
+    // 监听 Obsidian 兼容插件事件
+    this.obsidianPluginManager.on('pluginRegistered', (plugin: any) => {
+      console.log('Obsidian compatible plugin registered:', plugin.name);
+    });
+
+    this.obsidianPluginManager.on('pluginEnabled', (plugin: any) => {
+      console.log('Obsidian compatible plugin enabled:', plugin.name);
+      // 安全地调用通知
+      try {
+        if (this.moleculeContext.notification && this.moleculeContext.notification.open) {
+          this.moleculeContext.notification.open({
+            id: `obsidian-plugin-enabled-${plugin.id}`,
+            value: `Obsidian 兼容插件 "${plugin.name}" 已启用`,
+            type: 'success'
+          });
+        }
+      } catch (error) {
+        console.log('Obsidian compatible plugin enabled:', plugin.name);
+      }
+    });
+
+    this.obsidianPluginManager.on('pluginError', (plugin: any, error: any) => {
+      console.error('Obsidian compatible plugin error:', plugin.name, error);
+      // 安全地调用通知
+      try {
+        if (this.moleculeContext.notification && this.moleculeContext.notification.open) {
+          this.moleculeContext.notification.open({
+            id: `obsidian-plugin-error-${plugin.id}`,
+            value: `Obsidian 兼容插件 "${plugin.name}" 加载失败: ${error.message}`,
+            type: 'error'
+          });
+        }
+      } catch (error) {
+        console.error('Obsidian compatible plugin error:', plugin.name, error);
+      }
+    });
+  }
+
   /**
    * 初始化插件系统
    */
@@ -59,6 +104,9 @@ export class PluginSystemService {
     
     // 注册内置插件
     await this.registerBuiltinPlugins();
+    
+    // 注册 Obsidian 兼容插件
+    await this.registerObsidianPlugins();
     
     // 启用所有插件
     await this.enableAllPlugins();
@@ -80,11 +128,27 @@ export class PluginSystemService {
   }
 
   /**
+   * 注册 Obsidian 兼容插件
+   */
+  private async registerObsidianPlugins() {
+    // 注册 Hello 插件 - 使用传统插件管理器，因为它实现了 IPluginClass
+    await this.pluginManager.registerPlugin(helloPluginManifest, helloPluginManifest.pluginClass);
+    
+    // 注册 Obsidian 示例插件
+    await this.obsidianPluginManager.registerObsidianPlugin(
+      obsidianExampleManifest, 
+      obsidianExampleManifest.pluginClass
+    );
+    
+    // 这里可以添加更多 Obsidian 兼容插件
+  }
+
+  /**
    * 启用所有插件
    */
   private async enableAllPlugins() {
+    // 启用传统插件
     const plugins = this.pluginManager.getAllPlugins();
-    
     for (const plugin of plugins) {
       try {
         await this.pluginManager.enablePlugin(plugin.id);
@@ -92,26 +156,54 @@ export class PluginSystemService {
         console.error(`Failed to enable plugin ${plugin.id}:`, error);
       }
     }
+
+    // 启用 Obsidian 兼容插件
+    const obsidianPlugins = this.obsidianPluginManager.getAllPlugins();
+    for (const plugin of obsidianPlugins) {
+      try {
+        await this.obsidianPluginManager.enableObsidianPlugin(plugin.id);
+      } catch (error) {
+        console.error(`Failed to enable Obsidian plugin ${plugin.id}:`, error);
+      }
+    }
   }
 
   /**
-   * 获取插件管理器
+   * 获取传统插件管理器
    */
   getPluginManager(): PluginManager {
     return this.pluginManager;
   }
 
   /**
-   * 获取所有插件
+   * 获取 Obsidian 兼容插件管理器
    */
-  getAllPlugins() {
-    return this.pluginManager.getAllPlugins();
+  getObsidianPluginManager(): ObsidianCompatiblePluginManager {
+    return this.obsidianPluginManager;
   }
 
   /**
-   * 获取启用的插件
+   * 获取所有插件（包括传统和 Obsidian 兼容）
+   */
+  getAllPlugins() {
+    const traditionalPlugins = this.pluginManager.getAllPlugins();
+    const obsidianPlugins = this.obsidianPluginManager.getAllPlugins();
+    return [...traditionalPlugins, ...obsidianPlugins];
+  }
+
+  /**
+   * 获取启用的插件（包括传统和 Obsidian 兼容）
    */
   getEnabledPlugins() {
-    return this.pluginManager.getEnabledPlugins();
+    const traditionalPlugins = this.pluginManager.getEnabledPlugins();
+    const obsidianPlugins = this.obsidianPluginManager.getEnabledPlugins();
+    return [...traditionalPlugins, ...obsidianPlugins];
+  }
+
+  /**
+   * 获取 Obsidian App 实例
+   */
+  getObsidianApp() {
+    return this.obsidianPluginManager.getApp();
   }
 }

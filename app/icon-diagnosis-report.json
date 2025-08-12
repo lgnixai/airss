@@ -1,0 +1,96 @@
+{
+  "timestamp": "2025-08-12T10:27:45.235Z",
+  "results": [
+    {
+      "step": "服务器状态",
+      "status": "warning",
+      "message": "服务器响应异常 (状态码: 404)"
+    },
+    {
+      "step": "HelloPlugin 代码",
+      "status": "success",
+      "message": "使用 Molecule API 添加活动栏项目"
+    },
+    {
+      "step": "HelloPlugin 代码",
+      "status": "success",
+      "message": "正确的插件 ID"
+    },
+    {
+      "step": "HelloPlugin 代码",
+      "status": "success",
+      "message": "Hello 图标设置"
+    },
+    {
+      "step": "HelloPlugin 代码",
+      "status": "success",
+      "message": "点击事件处理"
+    },
+    {
+      "step": "HelloPlugin 代码",
+      "status": "success",
+      "message": "正确的清理逻辑"
+    },
+    {
+      "step": "代码文件检查",
+      "status": "success",
+      "message": "src/plugins/hello/HelloPlugin.ts 存在"
+    },
+    {
+      "step": "PluginManager 代码",
+      "status": "success",
+      "message": "React 导入"
+    },
+    {
+      "step": "PluginManager 代码",
+      "status": "success",
+      "message": "addRibbonIcon 方法存在"
+    },
+    {
+      "step": "PluginManager 代码",
+      "status": "success",
+      "message": "使用 React.createElement"
+    },
+    {
+      "step": "代码文件检查",
+      "status": "success",
+      "message": "src/core/pluginSystem/ObsidianCompatiblePluginManager.ts 存在"
+    },
+    {
+      "step": "TestExtension 代码",
+      "status": "success",
+      "message": "testPane 活动栏项目"
+    },
+    {
+      "step": "TestExtension 代码",
+      "status": "success",
+      "message": "pluginManager 活动栏项目"
+    },
+    {
+      "step": "代码文件检查",
+      "status": "success",
+      "message": "src/extensions/TestExtension.tsx 存在"
+    },
+    {
+      "step": "浏览器错误检查",
+      "status": "info",
+      "message": "需要手动检查浏览器控制台错误"
+    },
+    {
+      "step": "服务器状态",
+      "status": "error",
+      "message": "服务器连接超时"
+    },
+    {
+      "step": "Puppeteer 测试",
+      "status": "success",
+      "message": "Puppeteer 测试完成"
+    }
+  ],
+  "summary": {
+    "success": 14,
+    "error": 1,
+    "warning": 1,
+    "info": 1
+  }
+}

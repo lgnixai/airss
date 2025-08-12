@@ -611,7 +611,7 @@ ${content}
             name: '插件管理',
             alignment: 'top',
             sortIndex: 3,
-            icon: 'puzzle',
+            icon: 'rocket',
         });
         molecule.sidebar.add({
             id: 'testPane',
