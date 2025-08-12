@@ -9,6 +9,8 @@ export default defineConfig({
     plugins: [
         react({
             jsxRuntime: 'automatic',
+            // 启用 React 18 的新特性
+            fastRefresh: true,
         }),
         monacoEditorPlugin({
             forceBuildCDN: false,
@@ -23,6 +25,22 @@ export default defineConfig({
         esbuildOptions: {
             plugins: [esbuildPluginMonacoEditorNls()],
         },
+        // 预构建优化
+        include: ['react', 'react-dom', 'monaco-editor'],
+    },
+    build: {
+        // 构建优化
+        target: 'es2022',
+        minify: 'esbuild',
+        sourcemap: true,
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    'react-vendor': ['react', 'react-dom'],
+                    'monaco-vendor': ['monaco-editor'],
+                },
+            },
+        },
     },
     server: {
         cors: false,
@@ -31,5 +49,13 @@ export default defineConfig({
                 target: '',
             },
         },
+        // 开发服务器优化
+        hmr: {
+            overlay: true,
+        },
+    },
+    // 性能优化
+    esbuild: {
+        target: 'es2022',
     },
 });

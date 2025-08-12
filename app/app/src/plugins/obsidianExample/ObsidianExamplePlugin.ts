@@ -56,7 +56,7 @@ export class ObsidianExamplePlugin extends Plugin {
     console.log('Obsidian Example Plugin initialization completed');
   }
 
-  async onunload() {
+  override async onunload() {
     console.log('Obsidian Example Plugin unloading...');
 
     // 清理状态栏项目

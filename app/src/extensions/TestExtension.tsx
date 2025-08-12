@@ -8,7 +8,7 @@ export const TestExtension: IExtension = {
     contributes: {
         [IContributeType.Modules]: {},
     },
-    activate(molecule: IMoleculeContext, monaco) {
+    activate(molecule: IMoleculeContext, _monaco) {
         console.log('TestExtension activated');
         
         let pluginSystem: PluginSystemService | null = null;

@@ -897,7 +897,7 @@ ${article.description}
     ];
 
     const randomFeed = sampleFeeds[Math.floor(Math.random() * sampleFeeds.length)];
-    urlInput.value = randomFeed;
+    urlInput.value = randomFeed || '';
   }
 
   private clearFeeds() {
