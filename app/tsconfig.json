@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "lib": ["es5", "es6", "es7", "es2017", "dom", "ESNext"],
+        "target": "ESNext",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "jsx": "react-jsx",
+        "module": "ESNext",
+        "baseUrl": "./src",
+        "strict": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"]
+}

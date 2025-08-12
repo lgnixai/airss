@@ -1,0 +1,33 @@
+{
+  "name": "molecule-preview",
+  "private": true,
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test:automation": "tsx scripts/test.ts",
+    "test:automation:headless": "tsx scripts/test.ts --headless",
+    "test:ai-assistant": "tsx scripts/test-ai-assistant.ts"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@dtinsight/molecule": "workspace:*",
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite": "^4.4.9",
+    "vite-plugin-mock-dev-server": "^1.4.0",
+    "vite-plugin-monaco-editor": "^1.1.0",
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "6.x"
+  },
+  "devDependencies": {
+    "@types/puppeteer": "^7.0.4",
+    "puppeteer": "^24.16.1",
+    "tsx": "^4.20.3"
+  }
+}
