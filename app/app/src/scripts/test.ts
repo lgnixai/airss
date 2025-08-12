@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 
-import { runAutomationTests } from '../src/tests/automation';
+import { runAutomationTests } from '../tests/automation';
 
 console.log('🤖 Molecule 自动化测试工具');
 console.log('='.repeat(40));

@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 
-import { runAiAssistantTests } from '../src/tests/ai-assistant-test';
+import { runAiAssistantTests } from '../tests/ai-assistant-test';
 
 async function main() {
   console.log('🤖 AI助手组件专项测试');
