@@ -3,6 +3,7 @@ import { ObsidianCompatiblePluginManager } from './pluginSystem/ObsidianCompatib
 import { RssPluginManifest } from '../plugins/rss/manifest';
 import { obsidianExampleManifest } from '../plugins/obsidianExample/manifest';
 import { helloPluginManifest } from '../plugins/hello/manifest';
+import { excalidrawPluginManifest } from '../plugins/excalidraw/manifest';
 // import { AiAssistantPluginManifest } from '../plugins/aiAssistant/manifest';
 
 export class PluginSystemService {
@@ -121,6 +122,12 @@ export class PluginSystemService {
     // 注册 RSS 插件
     await this.pluginManager.registerPlugin(RssPluginManifest, RssPluginManifest.pluginClass);
     
+    // 注册 Hello 插件
+    await this.pluginManager.registerPlugin(helloPluginManifest, helloPluginManifest.pluginClass);
+    
+    // 注册 Excalidraw 插件
+    await this.pluginManager.registerPlugin(excalidrawPluginManifest, excalidrawPluginManifest.pluginClass);
+    
     // 注册 AI 助手插件 - 暂时禁用，使用TestExtension中的新实现
     // await this.pluginManager.registerPlugin(AiAssistantPluginManifest, AiAssistantPluginManifest.pluginClass);
     
@@ -131,9 +138,6 @@ export class PluginSystemService {
    * 注册 Obsidian 兼容插件
    */
   private async registerObsidianPlugins() {
-    // 注册 Hello 插件 - 使用传统插件管理器，因为它实现了 IPluginClass
-    await this.pluginManager.registerPlugin(helloPluginManifest, helloPluginManifest.pluginClass);
-    
     // 注册 Obsidian 示例插件
     await this.obsidianPluginManager.registerObsidianPlugin(
       obsidianExampleManifest, 
