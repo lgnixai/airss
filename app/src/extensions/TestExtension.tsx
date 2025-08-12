@@ -1,6 +1,6 @@
 import { IContributeType, IExtension, IMoleculeContext } from '@dtinsight/molecule';
 import React from 'react';
-import { PluginSystemService } from '../../app/src/core/PluginSystemService';
+import { PluginSystemService } from '../core/pluginSystem/PluginSystemService';
 
 export const TestExtension: IExtension = {
     id: 'TestExtension',
@@ -50,40 +50,31 @@ export const TestExtension: IExtension = {
             }
         }, 1000);
 
-        // 添加测试活动栏项目
-        molecule.activityBar.add({
-            id: 'testPane',
-            name: '测试面板',
-            alignment: 'top',
-            sortIndex: 2,
-            icon: 'beaker',
-        });
-
-        molecule.activityBar.add({
-            id: 'pluginManager',
-            name: '插件管理',
-            alignment: 'top',
-            sortIndex: 3,
-            icon: 'rocket',
-        });
-
-        // 添加测试侧边栏
-        molecule.sidebar.add({
-            id: 'testPane',
-            name: '测试面板',
-            render: () => React.createElement('div', {
-                style: {
-                    padding: '20px',
-                    color: '#cccccc',
-                    backgroundColor: '#252526',
-                    height: '100%'
-                }
-            }, [
-                React.createElement('h2', { key: 'title' }, '测试面板'),
-                React.createElement('p', { key: 'content' }, '这是一个测试面板，用于验证 Molecule 框架是否正常工作。'),
-                React.createElement('p', { key: 'status' }, '状态: 正常运行')
-            ]),
-        });
+        // 添加测试面板到侧边栏
+        setTimeout(() => {
+            try {
+                molecule.sidebar.add({
+                    id: 'testPane',
+                    title: '测试面板',
+                    render: () => React.createElement('div', {
+                        style: {
+                            padding: '20px',
+                            color: '#cccccc',
+                            backgroundColor: '#252526',
+                            height: '100%'
+                        }
+                    }, [
+                        React.createElement('h2', { key: 'title' }, '测试面板'),
+                        React.createElement('p', { key: 'content' }, '这是一个测试面板，用于验证侧边栏功能。'),
+                        React.createElement('p', { key: 'status' }, '状态: 正常运行')
+                    ])
+                });
+                
+                console.log('Test pane added to sidebar');
+            } catch (error) {
+                console.error('Failed to add test pane to sidebar:', error);
+            }
+        }, 1500);
 
         // 延迟初始化插件系统，确保 Molecule 完全加载
         setTimeout(() => {
@@ -100,41 +91,32 @@ export const TestExtension: IExtension = {
             }
         }, 2000);
 
-        // 添加插件管理侧边栏
+        // 添加插件管理器到侧边栏
         setTimeout(() => {
-            molecule.sidebar.add({
-                id: 'pluginManager',
-                name: '插件管理',
-                render: () => React.createElement('div', {
-                    style: {
-                        padding: '20px',
-                        color: '#cccccc',
-                        backgroundColor: '#252526',
-                        height: '100%'
-                    }
-                }, [
-                    React.createElement('h2', { key: 'title' }, '插件管理'),
-                    React.createElement('p', { key: 'content' }, '插件系统状态: ' + (pluginSystem ? '已初始化' : '未初始化')),
-                    React.createElement('p', { key: 'plugins' }, '已加载插件: Hello Plugin'),
-                    React.createElement('button', {
-                        key: 'refresh',
-                        onClick: () => {
-                            console.log('刷新插件列表');
-                            window.location.reload();
-                        },
+            try {
+                molecule.sidebar.add({
+                    id: 'pluginManager',
+                    title: '插件管理器',
+                    render: () => React.createElement('div', {
                         style: {
-                            padding: '8px 16px',
-                            backgroundColor: '#007acc',
-                            color: 'white',
-                            border: 'none',
-                            borderRadius: '4px',
-                            cursor: 'pointer',
-                            marginTop: '10px'
+                            padding: '20px',
+                            color: '#cccccc',
+                            backgroundColor: '#252526',
+                            height: '100%'
                         }
-                    }, '刷新')
-                ]),
-            });
-        }, 3000);
+                    }, [
+                        React.createElement('h2', { key: 'title' }, '插件管理器'),
+                        React.createElement('p', { key: 'content' }, '这是插件管理器面板，用于管理已安装的插件。'),
+                        React.createElement('p', { key: 'status' }, '状态: 正常运行'),
+                        React.createElement('p', { key: 'plugins' }, '已安装插件: Hello Plugin')
+                    ])
+                });
+                
+                console.log('Plugin manager added to sidebar');
+            } catch (error) {
+                console.error('Failed to add plugin manager to sidebar:', error);
+            }
+        }, 2500);
 
         console.log('TestExtension setup completed');
     }
