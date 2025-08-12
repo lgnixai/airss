@@ -23,10 +23,10 @@ class PluginSystemDebugger {
     console.log('\n📁 检查插件文件...');
     
     const pluginFiles = [
-      'src/plugins/hello/HelloPlugin.ts',
-      'src/plugins/hello/manifest.ts',
-      'src/core/pluginSystem/ObsidianCompatiblePluginManager.ts',
-      'src/core/PluginSystemService.ts'
+      'app/app/src/plugins/hello/HelloPlugin.ts',
+      'app/app/src/plugins/hello/manifest.ts',
+      'app/app/src/core/pluginSystem/ObsidianCompatiblePluginManager.ts',
+      'app/app/src/core/PluginSystemService.ts'
     ];
     
     for (const file of pluginFiles) {
@@ -46,7 +46,7 @@ class PluginSystemDebugger {
     console.log('\n🌐 检查页面响应...');
     
     try {
-      const response = await this.makeRequest('http://localhost:5173/');
+      const response = await this.makeRequest('http://localhost:3000/');
       
       if (response.statusCode === 200) {
         console.log('✅ 页面响应成功');
@@ -91,7 +91,7 @@ class PluginSystemDebugger {
     console.log('3. ✅ 添加了调试日志');
     
     console.log('\n🔍 下一步检查:');
-    console.log('1. 打开浏览器访问 http://localhost:5173/');
+    console.log('1. 打开浏览器访问 http://localhost:3000/');
     console.log('2. 按F12打开开发者工具');
     console.log('3. 查看Console标签页');
     console.log('4. 检查是否有以下日志:');

@@ -55,7 +55,7 @@ class FinalAutoTest {
         
         // 修复端口号
         if (content.includes('localhost:5176')) {
-          content = content.replace(/localhost:5176/g, 'localhost:5173');
+          content = content.replace(/localhost:5176/g, 'localhost:3000');
           modified = true;
           console.log(`🔧 修复 ${file} 中的端口号`);
         }
@@ -250,7 +250,7 @@ class FinalAutoTest {
     if (failedTests === 0) {
       console.log('✅ 自动化测试通过！');
       console.log('💡 Hello插件图标应该已经正确显示');
-      console.log('🌐 请访问: http://localhost:5173/');
+      console.log('🌐 请访问: http://localhost:3000/');
       console.log('🔍 查看左侧活动栏是否有 👋 Hello插件图标');
     } else {
       console.log('🔧 仍有问题需要解决:');
@@ -260,7 +260,7 @@ class FinalAutoTest {
     }
     
     console.log('\n🚀 验证步骤:');
-    console.log('1. 打开浏览器访问 http://localhost:5173/');
+    console.log('1. 打开浏览器访问 http://localhost:3000/');
     console.log('2. 按F12打开开发者工具');
     console.log('3. 查看Console标签页，应该看到:');
     console.log('   - "Hello Plugin loaded!"');

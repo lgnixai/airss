@@ -47,7 +47,7 @@ class DetailedPluginTest {
     console.log('\n🔍 检查页面加载...');
     
     try {
-      const response = await this.makeRequest('http://localhost:5173/');
+      const response = await this.makeRequest('http://localhost:3000/');
       
       if (response.statusCode === 200) {
         console.log('✅ 页面加载成功');
@@ -103,9 +103,9 @@ class DetailedPluginTest {
     try {
       // 检查主要的JavaScript文件
       const jsFiles = [
-        'http://localhost:5173/src/main.tsx',
-        'http://localhost:5173/src/App.tsx',
-        'http://localhost:5173/src/extensions/TestExtension.tsx'
+        'http://localhost:3000/src/main.tsx',
+        'http://localhost:3000/src/App.tsx',
+        'http://localhost:3000/src/extensions/TestExtension.tsx'
       ];
       
       let allFilesLoadable = true;

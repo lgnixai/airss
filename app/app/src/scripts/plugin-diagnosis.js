@@ -47,7 +47,7 @@ class PluginDiagnosis {
     console.log('\n🔍 检查开发服务器状态...');
     
     try {
-      const response = await this.makeRequest('http://localhost:5173/');
+      const response = await this.makeRequest('http://localhost:3000/');
       
       if (response.statusCode === 200) {
         console.log('✅ 开发服务器正常运行');
@@ -85,7 +85,7 @@ class PluginDiagnosis {
     console.log('\n🔍 测试页面响应...');
     
     try {
-      const htmlResponse = await this.makeRequest('http://localhost:5173/');
+      const htmlResponse = await this.makeRequest('http://localhost:3000/');
       
       if (htmlResponse.statusCode === 200) {
         // 检查HTML结构

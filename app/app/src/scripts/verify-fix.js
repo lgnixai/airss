@@ -149,7 +149,7 @@ class VerifyFix {
             console.log('4. ✅ 正确的清理逻辑');
             
             console.log('\n🔍 现在请测试:');
-            console.log('1. 刷新浏览器页面: http://localhost:5173/');
+            console.log('1. 刷新浏览器页面: http://localhost:3000/');
             console.log('2. 查看控制台是否显示: "Hello Plugin: Using plugin API to add activity bar item"');
             console.log('3. 检查左侧活动栏是否显示 💡 图标 (lightbulb)');
             console.log('4. 点击图标测试功能');

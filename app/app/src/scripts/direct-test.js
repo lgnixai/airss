@@ -34,7 +34,7 @@ class DirectTest {
         console.log('📡 使用 curl 检查服务器状态...');
         
         return new Promise((resolve) => {
-            exec('curl -s -o /dev/null -w "%{http_code}" http://localhost:5173/', (error, stdout, stderr) => {
+            exec('curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/', (error, stdout, stderr) => {
                 if (error) {
                     console.log('❌ curl 命令执行失败:', error.message);
                     this.results.push({ step: '服务器状态', status: 'error', message: `curl 失败: ${error.message}` });
@@ -133,7 +133,7 @@ class DirectTest {
         if (errorCount === 0) {
             console.log('\n🎉 所有检查都通过了！');
             console.log('\n🎯 下一步操作:');
-            console.log('1. 打开浏览器访问: http://localhost:5173/');
+            console.log('1. 打开浏览器访问: http://localhost:3000/');
             console.log('2. 按 F12 打开开发者工具');
             console.log('3. 查看控制台输出');
             console.log('4. 检查左侧活动栏是否显示 👋 图标');

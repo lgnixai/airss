@@ -7,7 +7,7 @@ const path = require('path');
 
 class IconDiagnosis {
     constructor() {
-        this.serverUrl = 'http://localhost:5173';
+        this.serverUrl = 'http://localhost:3000';
         this.results = [];
     }
 
@@ -69,9 +69,9 @@ class IconDiagnosis {
         console.log('\n📁 检查代码文件...');
         
         const files = [
-            'src/plugins/hello/HelloPlugin.ts',
-            'src/core/pluginSystem/ObsidianCompatiblePluginManager.ts',
-            'src/extensions/TestExtension.tsx'
+            'app/app/src/plugins/hello/HelloPlugin.ts',
+            'app/app/src/core/pluginSystem/ObsidianCompatiblePluginManager.ts',
+            'app/app/src/extensions/TestExtension.tsx'
         ];
         
         for (const file of files) {
@@ -218,7 +218,7 @@ class IconDiagnosis {
     async runPuppeteerTest() {
         console.log('\n🤖 运行 Puppeteer 自动化测试...');
         
-        const puppeteerTestPath = path.join(process.cwd(), 'src/tests/puppeteer-plugin-test.ts');
+        const puppeteerTestPath = path.join(process.cwd(), 'app/app/src/tests/puppeteer-plugin-test.ts');
         
         if (fs.existsSync(puppeteerTestPath)) {
             try {
@@ -328,7 +328,7 @@ class IconDiagnosis {
         }
         
         console.log('\n🎯 下一步操作:');
-        console.log('1. 刷新浏览器页面 http://localhost:5173/');
+        console.log('1. 刷新浏览器页面 http://localhost:3000/');
         console.log('2. 打开浏览器开发者工具 (F12)');
         console.log('3. 查看控制台是否有错误信息');
         console.log('4. 检查左侧活动栏是否显示 👋 图标');

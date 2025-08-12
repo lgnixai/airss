@@ -35,7 +35,7 @@ class IconDisplayTest {
     console.log('\n🔍 检查页面加载...');
     
     try {
-      const response = await this.makeRequest('http://localhost:5173/');
+      const response = await this.makeRequest('http://localhost:3000/');
       
       if (response.statusCode === 200) {
         console.log('✅ 页面加载成功');
@@ -70,7 +70,7 @@ class IconDisplayTest {
     console.log('\n🔍 检查活动栏状态...');
     
     console.log('📝 请手动检查活动栏:');
-    console.log('1. 打开浏览器访问 http://localhost:5173/');
+    console.log('1. 打开浏览器访问 http://localhost:3000/');
     console.log('2. 查看左侧活动栏区域');
     console.log('3. 检查是否有以下图标:');
     console.log('   - 📄 文件图标 (默认)');

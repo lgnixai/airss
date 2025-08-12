@@ -54,7 +54,7 @@ class QuickVerify {
     console.log('\n🌐 检查服务器状态...');
     
     try {
-      const response = await this.makeRequest('http://localhost:5173/');
+      const response = await this.makeRequest('http://localhost:3000/');
       
       if (response.statusCode === 200) {
         console.log('✅ 服务器运行正常');
@@ -90,7 +90,7 @@ class QuickVerify {
     console.log('4. ✅ 添加正确的清理逻辑');
     
     console.log('\n🚀 验证步骤:');
-    console.log('1. 刷新浏览器页面 http://localhost:5173/');
+    console.log('1. 刷新浏览器页面 http://localhost:3000/');
     console.log('2. 查看左侧活动栏，应该看到 👋 Hello插件图标');
     console.log('3. 点击图标测试Hello World功能');
     console.log('4. 查看浏览器控制台，应该看到:');

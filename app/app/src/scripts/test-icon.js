@@ -7,12 +7,12 @@ class IconTest {
     console.log('🔍 测试Hello插件图标显示...');
     
     try {
-      const response = await this.makeRequest('http://localhost:5173/');
+      const response = await this.makeRequest('http://localhost:3000/');
       
       if (response.statusCode === 200) {
         console.log('✅ 页面加载成功');
         console.log('\n📝 请手动检查活动栏:');
-        console.log('1. 打开浏览器访问 http://localhost:5173/');
+        console.log('1. 打开浏览器访问 http://localhost:3000/');
         console.log('2. 查看左侧活动栏区域');
         console.log('3. 检查是否有 👋 Hello插件图标');
         console.log('4. 点击图标测试功能');

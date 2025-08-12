@@ -35,7 +35,7 @@ class FixTest {
     console.log('\n🔍 检查页面加载...');
     
     try {
-      const response = await this.makeRequest('http://localhost:5173/');
+      const response = await this.makeRequest('http://localhost:3000/');
       
       if (response.statusCode === 200) {
         console.log('✅ 页面加载成功');
@@ -90,7 +90,7 @@ class FixTest {
     console.log('\n🔍 检查React错误...');
     
     console.log('📝 请手动检查浏览器控制台:');
-    console.log('1. 打开浏览器访问 http://localhost:5173/');
+    console.log('1. 打开浏览器访问 http://localhost:3000/');
     console.log('2. 按F12打开开发者工具');
     console.log('3. 切换到Console标签页');
     console.log('4. 查看是否有以下错误:');

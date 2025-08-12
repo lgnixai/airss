@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-08-12T16:19:48.941Z",
+  "files": [
+    {
+      "path": "app/src/main.tsx",
+      "exists": true
+    },
+    {
+      "path": "app/src/App.tsx",
+      "exists": true
+    },
+    {
+      "path": "app/src/extensions/TestExtension.tsx",
+      "exists": true
+    },
+    {
+      "path": "app/app/src/plugins/hello/HelloPlugin.ts",
+      "exists": true
+    },
+    {
+      "path": "app/app/src/core/PluginSystemService.ts",
+      "exists": true
+    }
+  ],
+  "logs": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "timestamp": "2025-08-12T16:19:42.047Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting...",
+      "timestamp": "2025-08-12T16:19:42.064Z"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected.",
+      "timestamp": "2025-08-12T16:19:42.198Z"
+    }
+  ],
+  "errors": [],
+  "moleculeElements": 0,
+  "pageContentLength": 1792
+}

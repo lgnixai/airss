@@ -42,7 +42,7 @@ class SmartIconTest {
     console.log('\n🔍 检查服务器状态...');
     
     try {
-      const response = await this.makeRequest('http://localhost:5173/');
+      const response = await this.makeRequest('http://localhost:3000/');
       
       if (response.statusCode === 200) {
         console.log('✅ 服务器响应正常');
@@ -276,7 +276,7 @@ class SmartIconTest {
     if (failedTests === 0 && this.issues.length === 0) {
       console.log('✅ 系统状态良好！');
       console.log('💡 请手动检查浏览器中的Hello插件图标');
-      console.log('🌐 访问: http://localhost:5173/');
+      console.log('🌐 访问: http://localhost:3000/');
       console.log('🔍 查看左侧活动栏是否有 👋 图标');
     } else {
       console.log('🔧 需要解决的问题:');
@@ -297,7 +297,7 @@ class SmartIconTest {
     }
     
     console.log('\n🚀 快速验证步骤:');
-    console.log('1. 打开浏览器访问 http://localhost:5173/');
+    console.log('1. 打开浏览器访问 http://localhost:3000/');
     console.log('2. 按F12打开开发者工具');
     console.log('3. 查看Console标签页的日志');
     console.log('4. 检查左侧活动栏是否有 👋 Hello插件图标');

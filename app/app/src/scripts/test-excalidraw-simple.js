@@ -18,7 +18,7 @@ async function testExcalidrawSimple() {
 
     // 导航到应用
     console.log('🌐 导航到应用...');
-    await page.goto('http://localhost:5173/', { waitUntil: 'networkidle0' });
+    await page.goto('http://localhost:3000/', { waitUntil: 'networkidle0' });
     
     // 等待页面加载
     console.log('⏳ 等待页面加载...');

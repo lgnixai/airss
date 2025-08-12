@@ -1,0 +1,81 @@
+{
+  "timestamp": "2025-08-12T15:47:58.081Z",
+  "results": [
+    {
+      "step": "服务器状态",
+      "status": "error",
+      "message": "无法连接到服务器: "
+    },
+    {
+      "step": "HelloPlugin 代码",
+      "status": "error",
+      "message": "缺少: 使用 Molecule API 添加活动栏项目"
+    },
+    {
+      "step": "HelloPlugin 代码",
+      "status": "success",
+      "message": "正确的插件 ID"
+    },
+    {
+      "step": "HelloPlugin 代码",
+      "status": "error",
+      "message": "缺少: Hello 图标设置"
+    },
+    {
+      "step": "HelloPlugin 代码",
+      "status": "success",
+      "message": "点击事件处理"
+    },
+    {
+      "step": "HelloPlugin 代码",
+      "status": "error",
+      "message": "缺少: 正确的清理逻辑"
+    },
+    {
+      "step": "代码文件检查",
+      "status": "success",
+      "message": "app/app/src/plugins/hello/HelloPlugin.ts 存在"
+    },
+    {
+      "step": "PluginManager 代码",
+      "status": "success",
+      "message": "React 导入"
+    },
+    {
+      "step": "PluginManager 代码",
+      "status": "success",
+      "message": "addRibbonIcon 方法存在"
+    },
+    {
+      "step": "PluginManager 代码",
+      "status": "success",
+      "message": "使用 React.createElement"
+    },
+    {
+      "step": "代码文件检查",
+      "status": "success",
+      "message": "app/app/src/core/pluginSystem/ObsidianCompatiblePluginManager.ts 存在"
+    },
+    {
+      "step": "代码文件检查",
+      "status": "error",
+      "message": "app/app/src/extensions/TestExtension.tsx 不存在"
+    },
+    {
+      "step": "浏览器错误检查",
+      "status": "info",
+      "message": "需要手动检查浏览器控制台错误"
+    },
+    {
+      "step": "Puppeteer 测试",
+      "status": "success",
+      "message": "Puppeteer 测试完成"
+    }
+  ],
+  "summary": {
+    "success": 8,
+    "error": 5,
+    "warning": 0,
+    "info": 1
+  }
+}

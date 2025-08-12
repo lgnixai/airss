@@ -6,7 +6,7 @@ const path = require('path');
 
 class SimpleIconTest {
     constructor() {
-        this.serverUrl = 'http://localhost:5173';
+        this.serverUrl = 'http://localhost:3000';
     }
 
     async run() {
@@ -107,7 +107,7 @@ class SimpleIconTest {
 
     provideManualTestGuide() {
         console.log('\n🎯 手动测试指导:');
-        console.log('1. 打开浏览器访问: http://localhost:5173/');
+        console.log('1. 打开浏览器访问: http://localhost:3000/');
         console.log('2. 按 F12 打开开发者工具');
         console.log('3. 切换到 Console 标签页');
         console.log('4. 刷新页面');

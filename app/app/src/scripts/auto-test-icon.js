@@ -104,7 +104,7 @@ async function testHelloIcon() {
         
         // 导航到应用
         console.log('🌐 导航到应用...');
-        await page.goto('http://localhost:5173/', { 
+        await page.goto('http://localhost:3000/', { 
             waitUntil: 'networkidle2',
             timeout: 30000 
         });
@@ -327,7 +327,7 @@ testHelloIcon().then(result => {
         }
         
         console.log('\n💡 手动验证步骤:');
-        console.log('1. 打开浏览器: http://localhost:5173/');
+        console.log('1. 打开浏览器: http://localhost:3000/');
         console.log('2. 按 F12 打开开发者工具');
         console.log('3. 查看控制台是否显示 Hello 插件日志');
         console.log('4. 检查左侧活动栏是否显示 💡 图标');

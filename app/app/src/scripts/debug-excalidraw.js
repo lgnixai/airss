@@ -14,7 +14,7 @@ async function debugExcalidraw() {
     });
     const page = await browser.newPage();
 
-    await page.goto('http://localhost:5173/', { waitUntil: 'networkidle0' });
+    await page.goto('http://localhost:3000/', { waitUntil: 'networkidle0' });
     await new Promise(resolve => setTimeout(resolve, 5000));
 
     // 监听所有控制台消息

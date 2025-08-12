@@ -66,7 +66,7 @@ class AutoFixIcon {
     
     // 检查页面响应
     try {
-      const response = await this.makeRequest('http://localhost:5173/');
+      const response = await this.makeRequest('http://localhost:3000/');
       if (response.statusCode === 200) {
         console.log('✅ 页面响应正常');
         this.testResults.push({
@@ -348,7 +348,7 @@ class AutoFixIcon {
     }
     
     console.log('\n🎯 下一步操作:');
-    console.log('1. 刷新浏览器页面 http://localhost:5173/');
+    console.log('1. 刷新浏览器页面 http://localhost:3000/');
     console.log('2. 检查左侧活动栏是否有 👋 Hello插件图标');
     console.log('3. 点击图标测试功能');
     console.log('4. 查看浏览器控制台确认没有错误');
