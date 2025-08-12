@@ -1,0 +1,68 @@
+{
+  "startTime": "2025-08-12T17:17:26.798Z",
+  "tests": [
+    {
+      "name": "服务器连接测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "React 18 特性测试",
+      "status": "FAILED",
+      "message": "测试失败"
+    },
+    {
+      "name": "TypeScript 编译测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "Vite 功能测试",
+      "status": "FAILED",
+      "message": "测试失败"
+    },
+    {
+      "name": "Monaco Editor 测试",
+      "status": "ERROR",
+      "message": "Monaco Editor 检查失败: this.page.waitForTimeout is not a function"
+    },
+    {
+      "name": "Molecule 核心组件测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "插件系统测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "性能测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "构建输出测试",
+      "status": "ERROR",
+      "message": "构建输出检查失败: 构建输出目录不存在"
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "passed": 5,
+    "failed": 4,
+    "errors": [
+      {
+        "test": "Monaco Editor 测试",
+        "error": "Monaco Editor 检查失败: this.page.waitForTimeout is not a function"
+      },
+      {
+        "test": "构建输出测试",
+        "error": "构建输出检查失败: 构建输出目录不存在"
+      }
+    ],
+    "successRate": "55.56%"
+  },
+  "endTime": "2025-08-12T17:17:35.080Z",
+  "duration": 8282
+}

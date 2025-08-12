@@ -1,0 +1,64 @@
+{
+  "startTime": "2025-08-12T17:21:36.629Z",
+  "tests": [
+    {
+      "name": "服务器连接测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "React 18 编译测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "TypeScript 编译测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "Vite 开发服务器测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "Monaco Editor 集成测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "Molecule 核心组件测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "插件系统测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "性能测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "构建输出测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    },
+    {
+      "name": "热重载测试",
+      "status": "PASSED",
+      "message": "测试通过"
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0,
+    "errors": [],
+    "successRate": "100.00%"
+  },
+  "endTime": "2025-08-12T17:21:45.040Z",
+  "duration": 8411
+}
